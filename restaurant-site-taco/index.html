@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Fresh tacos, bright flavors, and relaxed neighborhood dining."
+    />
+    <title>Side Street Tacos</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+
+    <script
+      src="script.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a
+        class="logo"
+        href="/"
+        >Side Street Tacos</a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#menu-admin">Menu</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Fresh · Casual · Neighborhood</p>
+          <h1>Big flavor, folded fresh.</h1>
+          <p>
+            Hand-pressed tortillas, slow-cooked fillings, and salsas made every
+            morning.
+          </p>
+          <a
+            class="button"
+            href="#menu-admin"
+            >View the menu</a
+          >
+        </div>
+      </section>
+
+      <section id="about">
+        <p class="eyebrow">Our kitchen</p>
+        <h2>Made fresh. Built for sharing.</h2>
+        <p>
+          We serve vibrant tacos filled with seasonal produce and ingredients
+          sourced close to home.
+        </p>
+        <p>
+          Side Street began with a simple idea: good tortillas deserve bold,
+          honest ingredients. Our kitchen layers smoky heat, citrus, herbs, and
+          slow-cooked recipes into food meant to be passed around the table.
+          Pull up a chair, order one more taco than you think you need, and stay
+          awhile.
+        </p>
+      </section>
+
+      <section id="menu">
+        <div id="menu-admin"></div>
+        <script src="../menu-admin/dist/menu-sdk.js"></script>
+        <script>
+          MenuSDK.mount({
+            element: '#menu-admin',
+            restaurantId: 2,
+            themeColor: 'green'
+          });
+        </script>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Side Street Tacos. Good food, no fuss.
+      </p>
+    </footer>
+  </body>
+</html>

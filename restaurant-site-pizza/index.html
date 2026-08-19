@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="A simple starter website for a neighborhood restaurant."
+    />
+    <title>Neighborhood Table</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+
+    <script
+      src="script.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a
+        class="logo"
+        href="/"
+        >Neighborhood Table</a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#menu-admin">Menu</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Fresh food. Good company.</p>
+          <h1>Your new favorite neighborhood restaurant.</h1>
+          <p>
+            Seasonal ingredients, comforting plates, and a warm seat waiting for
+            you.
+          </p>
+          <a
+            class="button"
+            href="#menu-admin"
+            >View the menu</a
+          >
+        </div>
+      </section>
+
+      <section id="about">
+        <p class="eyebrow">About us</p>
+        <h2>Simple food, thoughtfully made.</h2>
+        <p>
+          We serve familiar dishes inspired by the season and sourced close to
+          home.
+        </p>
+        <p>
+          Founded in 2026, Neighborhood Table is a small restaurant with a big
+          heart. We believe that good food brings people together, and we strive
+          to create a welcoming space for our community to gather and enjoy a
+          meal. It is the greatest joy of our team to share our love of food
+          with our neighbors, and we hope that every visit to Neighborhood Table
+          leaves you feeling nourished, satisfied, and connected. We love to see
+          familiar faces and meet new friends, and we look forward to welcoming
+          you to our table. Come for the food, stay for the company, and leave
+          with a full heart.
+        </p>
+      </section>
+
+      <section id="menu">
+        <div id="menu-admin"></div>
+        <script src="../menu-admin/dist/menu-sdk.js"></script>
+        <script>
+          MenuSDK.mount({
+            element: '#menu-admin',
+            restaurantId: 1,
+            themeColor: 'green',
+          });
+        </script>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Neighborhood Table. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
