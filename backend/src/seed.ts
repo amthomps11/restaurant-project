@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import db from './database.ts';
+import db from './database';
 
 db.exec(`
   DELETE FROM menu_items;
