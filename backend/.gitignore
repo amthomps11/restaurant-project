@@ -15,5 +15,4 @@ build/
 *.db
 
 .cookies.txt
-# Browser session cookies
-backend/cookies.txt
+cookies.txt
