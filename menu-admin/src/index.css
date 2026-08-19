@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.menu-admin-sdk {
+  --text: #6b6375;
+  --text-heading: #08060d;
+  --background: #ffffff;
+  --border: #d1d5db;
+
+  width: 100%;
+  max-width: 1126px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+.menu-admin-sdk,
+.menu-admin-sdk *,
+.menu-admin-sdk *::before,
+.menu-admin-sdk *::after {
+  box-sizing: border-box;
+}

@@ -1,0 +1,163 @@
+### Get restaurant 1
+GET http://localhost:3001/api/restaurants/1
+
+###
+
+### Get restaurant 2
+GET http://localhost:3001/api/restaurants/2
+
+###
+
+### Check current session
+GET http://localhost:3001/api/auth/session
+
+###
+
+### Login as restaurant 1
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+  "restaurantId": 1,
+  "password": "pizza123"
+}
+
+###
+
+### Check session after logging in as restaurant 1
+GET http://localhost:3001/api/auth/session
+
+###
+
+### Create a menu item for restaurant 1
+POST http://localhost:3001/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Pizza",
+  "price": 14.99,
+  "description": "Pepperoni pizza"
+}
+
+###
+
+### Successfully update restaurant 1's menu item
+PUT http://localhost:3001/api/menu-items/1
+Content-Type: application/json
+
+{
+  "name": "Large Cheeseburger",
+  "price": 16.99,
+  "description": "Fresh beef, cheddar, lettuce, tomato, and extra toppings"
+}
+
+###
+
+### Get restaurant 1
+GET http://localhost:3001/api/restaurants/1
+
+###
+
+### Logout restaurant 1
+POST http://localhost:3001/api/auth/logout
+
+###
+
+### Login as restaurant 2
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+  "restaurantId": 2,
+  "password": "taco123"
+}
+
+###
+
+### Check session after logging in as restaurant 2
+GET http://localhost:3001/api/auth/session
+
+###
+
+### Try to update restaurant 1's menu item while logged in as restaurant 2
+### This should return 404 and should not update the item
+PUT http://localhost:3001/api/menu-items/1
+Content-Type: application/json
+
+{
+  "name": "Hacked Menu Item",
+  "price": 1,
+  "description": "Restaurant 2 should not be able to update this"
+}
+
+###
+
+### Get restaurant 1
+GET http://localhost:3001/api/restaurants/1
+
+###
+
+### Try to delete restaurant 1's menu item while logged in as restaurant 2
+### This should return 404 and should not delete the item
+DELETE http://localhost:3001/api/menu-items/1
+
+###
+
+### Get restaurant 1
+GET http://localhost:3001/api/restaurants/1
+
+###
+
+### Create a menu item for restaurant 2
+POST http://localhost:3001/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Fish Tacos",
+  "price": 12.99,
+  "description": "Three fish tacos with slaw and lime crema"
+}
+
+###
+
+### Logout restaurant 2
+POST http://localhost:3001/api/auth/logout
+
+###
+
+### Try to create a menu item while logged out
+### This should return 401
+POST http://localhost:3001/api/menu-items
+Content-Type: application/json
+
+{
+  "name": "Unauthorized Item",
+  "price": 9.99,
+  "description": "This should not be created"
+}
+
+###
+
+### Try to update a menu item while logged out
+### This should return 401
+PUT http://localhost:3001/api/menu-items/1
+Content-Type: application/json
+
+{
+  "name": "Unauthorized Update",
+  "price": 9.99,
+  "description": "This should not work"
+}
+
+###
+
+### Try to delete a menu item while logged out
+### This should return 401
+DELETE http://localhost:3001/api/menu-items/1
+```
+
+
+### Get restaurant 2
+GET http://localhost:3001/api/restaurants/2
+
+###
