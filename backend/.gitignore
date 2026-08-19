@@ -13,3 +13,7 @@ build/
 *.sqlite
 *.sqlite3
 *.db
+
+.cookies.txt
+# Browser session cookies
+backend/cookies.txt
